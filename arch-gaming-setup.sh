@@ -16,11 +16,15 @@ options nvidia NVreg_DynamicPowerManagement=0x02 NVreg_PreserveVideoMemoryAlloca
 EOF'
 
 echo "==> Installing essential gaming tools..."
+# Install core gaming packages from official repos
 sudo pacman -S --noconfirm \
     steam heroic-games-launcher mangohud goverlay gamescope \
     lutris wine winetricks gamemode lib32-gamemode \
-    vulkan-tools lib32-vulkan-icd-loader vulkan-icd-loader \
-    vkbasalt lib32-vkbasalt
+    vulkan-tools lib32-vulkan-icd-loader vulkan-icd-loader
+
+# Install vkBasalt and 32-bit variant from AUR using yay
+yay -S --noconfirm vkbasalt lib32-vkbasalt
+
 
 echo "==> Installing Proton GE (custom version)..."
 mkdir -p ~/.steam/root/compatibilitytools.d
