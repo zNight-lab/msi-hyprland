@@ -47,7 +47,7 @@ echo '{"compat_tool":"proton-ge-custom"}' > ~/.steam/root/config/config.vdf
 echo "==> Installing virtualization tools with QEMU + GPU Passthrough..."
 sudo pacman -S --noconfirm \
     qemu-full virt-manager virt-viewer dnsmasq vde2 bridge-utils openbsd-netcat \
-    edk2-ovmf swtpm spice spice-gtk ebtables iptables-nft ovmf
+    edk2-ovmf swtpm spice spice-gtk ovmf
 
 echo "==> Enabling libvirtd and configuring user access..."
 sudo systemctl enable --now libvirtd.service
