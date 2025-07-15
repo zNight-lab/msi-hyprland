@@ -17,13 +17,22 @@ EOF'
 
 echo "==> Installing essential gaming tools..."
 # Install core gaming packages from official repos
+echo "==> Installing core gaming tools from official Arch repositories..."
 sudo pacman -S --noconfirm \
-    steam heroic-games-launcher mangohud goverlay gamescope \
-    lutris wine winetricks gamemode lib32-gamemode \
-    vulkan-tools lib32-vulkan-icd-loader vulkan-icd-loader
+    steam \
+    lutris \
+    wine winetricks \
+    mangohud goverlay \
+    gamescope gamemode lib32-gamemode \
+    vulkan-tools vulkan-icd-loader lib32-vulkan-icd-loader \
+    gogdownloader
 
-# Install vkBasalt and 32-bit variant from AUR using yay
-yay -S --noconfirm vkbasalt lib32-vkbasalt
+echo "==> Installing AUR packages with yay (Heroic for Epic/GOG, Proton GE, DXVK, vkBasalt)..."
+yay -S --noconfirm \
+    heroic-games-launcher-bin \
+    proton-ge-custom-bin \
+    dxvk-bin \
+    vkbasalt lib32-vkbasalt
 
 
 echo "==> Installing Proton GE (custom version)..."
